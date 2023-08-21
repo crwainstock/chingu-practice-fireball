@@ -6,6 +6,7 @@ import { Chart } from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 import { useMeteorDataContext } from "../MeteorContext";
 
+//Thanks Alex for your work putting much of this together! Your work is much appreciated! :)
 function StrikesByYear() {
   //   const meteorData = useMeteorDataContext();
   const [meteorData, setData] = useState([]);
