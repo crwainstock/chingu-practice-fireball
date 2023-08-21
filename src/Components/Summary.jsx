@@ -25,11 +25,16 @@ function Summary() {
     }
   };
 
-  //   const meteors = data.slice(0, 5).map((meteor) => {
-  //     // console.log(meteor);
-  //     return <div>{meteor.id}</div>;
-  //   });
+  const meteors = data.slice(0, 5).map((meteor) => {
+    // console.log(meteor);
+    return <div>{meteor.id}</div>;
+  });
 
-  return <h2>Summary Content</h2>;
+  return (
+    <div>
+      <h2>Summary Content</h2>
+      <div>{meteors}</div>
+    </div>
+  );
 }
 export default Summary;
