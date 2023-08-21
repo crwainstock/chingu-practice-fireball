@@ -24,8 +24,6 @@ function StrikesByYear() {
       );
 
       setLoading(false);
-      //   console.log({ data });
-      // data.sort((a, b) => a.year - b.year);
       setData(data);
       return data; //Array of like 45,000 objects
     } catch (err) {
@@ -40,17 +38,19 @@ function StrikesByYear() {
   meteorData.forEach((meteor) => {
     const year = new Date(meteor.year).getFullYear();
 
-    if (!strikesByYear[year]) {
-      strikesByYear[year] = 0;
-    }
+    if (!isNaN(year)) {
+      if (!strikesByYear[year]) {
+        strikesByYear[year] = 0;
+      }
 
-    strikesByYear[year]++;
+      strikesByYear[year]++;
+    }
   });
 
   const years = Object.keys(strikesByYear);
+
   const strikesCount = years.map((year) => strikesByYear[year]);
   //Could add something here to delete years with only one strike to zoom in on data from like 1900-present
-  console.log(strikesCount);
 
   const chartData = {
     labels: years,
