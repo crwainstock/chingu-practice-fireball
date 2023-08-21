@@ -40,7 +40,7 @@ function StrikesByYear() {
   meteorData.forEach((meteor) => {
     const year = new Date(meteor.year).getFullYear();
 
-    //Filter out empty fields, falsy data, and NaN
+    //Filter out empty fields, falsy data, and NaN, filters out data before 1900
     if (year > 1899) {
       if (!isNaN(year)) {
         if (!strikesByYear[year]) {
@@ -56,7 +56,7 @@ function StrikesByYear() {
 
   const strikesCount = years.map((year) => strikesByYear[year]);
 
-  //Group years into 10 year periods
+  //Group years into 10 year periods -- NOT COMPLETE
   // function groupYearsIntoTenYearGroups(years) {
   //   //Sort years
   //   const sortedYears = years.sort((a, b) => a - b);
