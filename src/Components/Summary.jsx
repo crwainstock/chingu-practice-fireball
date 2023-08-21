@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import * as d3Fetch from "d3-fetch";
 
 function Summary() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -16,24 +16,24 @@ function Summary() {
       let data = await d3Fetch.csv(
         "https://gist.githubusercontent.com/uKiJo/8655699e6f0a64c84d25ad652a9ca072/raw/8ed19eadc38db9a5606d3831c1c717d6b5358920/meteorite-landing.csv"
       );
-      console.log(data);
+
       setLoading(false);
-      return data;
+      console.log({ data });
+      return data; //Array of like 45,000 objects
     } catch (err) {
       console.log(err);
     }
   };
 
+  //   const meteors = data.map((meteor) => {
+  //     console.log(meteor);
+  //     return <div>{meteor.name}</div>;
+  //   });
+
   return (
     <div>
       <h2>Summary Content</h2>
-      {loading ? (
-        <div className="spinner-border text-warning" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-      ) : (
-        <h3>Loading finished.</h3>
-      )}
+      {/* <div>{meteors}</div> */}
     </div>
   );
 }
