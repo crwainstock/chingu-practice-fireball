@@ -41,9 +41,11 @@ function StrikesByYear() {
     const year = new Date(meteor.year).getFullYear();
 
     //Filter out empty fields, falsy data, and NaN
-    if (!isNaN(year)) {
-      if (!strikesByYear[year]) {
-        strikesByYear[year] = 0;
+    if (year > 1899) {
+      if (!isNaN(year)) {
+        if (!strikesByYear[year]) {
+          strikesByYear[year] = 0;
+        }
       }
 
       strikesByYear[year]++;
@@ -133,7 +135,7 @@ function StrikesByYear() {
         marginTop: 50,
         background: "rgb(12, 22, 79)",
         border: "5px solid white",
-        borderRadius: "3px",
+        borderRadius: "8px",
       }}
     >
       <Bar data={chartData} options={chartOptions} />
