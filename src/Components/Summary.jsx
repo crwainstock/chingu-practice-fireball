@@ -2,10 +2,10 @@ import React from "react";
 import { useState, useEffect } from "react";
 import StrikesByYear from "./StrikesByYear";
 // import * as d3Fetch from "d3-fetch";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+// import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 // import { Doughnut } from "react-chartjs-2";
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+// ChartJS.register(ArcElement, Tooltip, Legend);
 
 function Summary() {
   const [data, setData] = useState([]);
@@ -32,10 +32,10 @@ function Summary() {
   //     }
   //   };
 
-  const meteors = data.slice(0, 10).map((meteor) => {
-    // console.log(meteor);
-    return <div key={meteor.id}>{meteor.name}</div>;
-  });
+//   const meteors = data.slice(0, 10).map((meteor) => {
+//     // console.log(meteor);
+//     return <div key={meteor.id}>{meteor.name}</div>;
+//   });
 
   const sample = {
     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
