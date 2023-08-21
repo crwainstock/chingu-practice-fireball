@@ -23,7 +23,7 @@ function StrikesByYear() {
       );
 
       setLoading(false);
-      console.log({ data });
+      //   console.log({ data });
       // data.sort((a, b) => a.year - b.year);
       setData(data);
       return data; //Array of like 45,000 objects
@@ -32,7 +32,6 @@ function StrikesByYear() {
     }
   };
 
-  console.log(meteorData); //Undefined -- data not arriving here...
   if (meteorData === 0) return;
 
   const strikesByYear = {};
@@ -49,6 +48,8 @@ function StrikesByYear() {
 
   const years = Object.keys(strikesByYear);
   const strikesCount = years.map((year) => strikesByYear[year]);
+  //Could add something here to delete years with only one strike to zoom in on data from like 1900-present
+  console.log(strikesCount);
 
   const chartData = {
     labels: years,
