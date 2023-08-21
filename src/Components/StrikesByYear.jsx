@@ -10,6 +10,7 @@ import { Bar } from "react-chartjs-2";
 function StrikesByYear() {
   //   const meteorData = useMeteorDataContext();
   const [meteorData, setData] = useState([]);
+  // const [groups, setGroups] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -34,10 +35,12 @@ function StrikesByYear() {
   if (meteorData === 0) return;
 
   const strikesByYear = {};
+  // const strikesByDecade = {};
 
   meteorData.forEach((meteor) => {
     const year = new Date(meteor.year).getFullYear();
 
+    //Filter out empty fields, falsy data, and NaN
     if (!isNaN(year)) {
       if (!strikesByYear[year]) {
         strikesByYear[year] = 0;
@@ -50,7 +53,35 @@ function StrikesByYear() {
   const years = Object.keys(strikesByYear);
 
   const strikesCount = years.map((year) => strikesByYear[year]);
-  //Could add something here to delete years with only one strike to zoom in on data from like 1900-present
+
+  //Group years into 10 year periods
+  // function groupYearsIntoTenYearGroups(years) {
+  //   //Sort years
+  //   const sortedYears = years.sort((a, b) => a - b);
+
+  //   const groups = [];
+  //   let currentGroup = [];
+  //   let startYear = sortedYears[0];
+
+  //   for (const year of sortedYears) {
+  //     if (year - startYear <= 9) {
+  //       currentGroup.push(year);
+  //     } else {
+  //       groups.push(currentGroup);
+  //       currentGroup = [year];
+  //       startYear = year;
+  //     }
+  //   }
+
+  //   // Push the last group if it's not empty
+  //   if (currentGroup.length > 0) {
+  //     groups.push(currentGroup);
+  //   }
+
+  //   setGroups(groups);
+  // }
+
+  // const strikesCount = groups.map((group) => strikesByDecade[group]);
 
   const chartData = {
     labels: years,
