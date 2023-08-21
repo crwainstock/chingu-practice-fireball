@@ -121,13 +121,21 @@ function StrikesByYear() {
 
     plugins: {
       legend: {
-        labels: {
-          color: "rgb(12, 22, 79)",
-          font: {
-            size: 18, // Set the font size of the legend label text to 18
-          },
+        display: false,
+      },
+      title: {
+        display: true,
+        text: "Meteorite Strikes by Year from 1900-2012",
+        font: {
+          size: 18,
         },
       },
+      // labels: {
+      //   color: "rgb(12, 22, 79)",
+      //   font: {
+      //     size: 18, // Set the font size of the legend label text to 18
+      //   },
+      // },
     },
   };
 
