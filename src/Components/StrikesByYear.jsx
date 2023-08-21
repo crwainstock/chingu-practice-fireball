@@ -7,7 +7,31 @@ import { Bar } from "react-chartjs-2";
 import { useMeteorDataContext } from "../MeteorContext";
 
 function StrikesByYear() {
-  const meteorData = useMeteorDataContext();
+  //   const meteorData = useMeteorDataContext();
+  const [meteorData, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      let data = await d3Fetch.csv(
+        "https://gist.githubusercontent.com/uKiJo/8655699e6f0a64c84d25ad652a9ca072/raw/8ed19eadc38db9a5606d3831c1c717d6b5358920/meteorite-landing.csv"
+      );
+
+      setLoading(false);
+      console.log({ data });
+      // data.sort((a, b) => a.year - b.year);
+      setData(data);
+      return data; //Array of like 45,000 objects
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   console.log(meteorData); //Undefined -- data not arriving here...
   if (meteorData === 0) return;
 
