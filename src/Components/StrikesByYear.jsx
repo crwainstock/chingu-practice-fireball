@@ -8,9 +8,10 @@ import { useMeteorDataContext } from "../MeteorContext";
 
 function StrikesByYear() {
   const meteorData = useMeteorDataContext();
+  console.log(meteorData); //Undefined -- data not arriving here...
   if (meteorData === 0) return;
 
-  const strikesByYear = {};
+  const strikesByYear = [];
 
   meteorData.forEach((meteor) => {
     const year = new Date(meteor.year).getFullYear();
