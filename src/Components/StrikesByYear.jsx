@@ -11,7 +11,7 @@ function StrikesByYear() {
   console.log(meteorData); //Undefined -- data not arriving here...
   if (meteorData === 0) return;
 
-  const strikesByYear = [];
+  const strikesByYear = {};
 
   meteorData.forEach((meteor) => {
     const year = new Date(meteor.year).getFullYear();
@@ -84,4 +84,4 @@ function StrikesByYear() {
   );
 }
 
-export default StrikesByYear; //Why is this saying it's not exporting?
+export default StrikesByYear;

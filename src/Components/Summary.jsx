@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import StrikesByYear from "./StrikesByYear";
-import * as d3Fetch from "d3-fetch";
+// import * as d3Fetch from "d3-fetch";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { Doughnut } from "react-chartjs-2";
+// import { Doughnut } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -79,11 +79,11 @@ function Summary() {
       ) : (
         <div>
           <StrikesByYear />
-          <Doughnut
+          {/* <Doughnut
             //   options={...}
             data={sample}
             // {...props}
-          />
+          /> */}
         </div>
       )}
     </div>
