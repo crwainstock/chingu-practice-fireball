@@ -19,7 +19,7 @@ function Summary() {
 
       setLoading(false);
       console.log({ data });
-
+      // data.sort((a, b) => a.year - b.year);
       setData(data);
       return data; //Array of like 45,000 objects
     } catch (err) {
