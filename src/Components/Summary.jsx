@@ -19,15 +19,17 @@ function Summary() {
 
       //   setLoading(false);
       console.log({ data });
+
+      setData(data);
       return data; //Array of like 45,000 objects
     } catch (err) {
       console.log(err);
     }
   };
 
-  const meteors = data.slice(0, 5).map((meteor) => {
+  const meteors = data.map((meteor) => {
     // console.log(meteor);
-    return <div>{meteor.id}</div>;
+    return <div key={meteor.id}>{meteor.name}</div>;
   });
 
   return (
