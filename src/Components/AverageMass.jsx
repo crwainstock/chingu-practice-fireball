@@ -1,41 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import * as d3Fetch from "d3-fetch";
-import {
-  Chart as ChartJS,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Tooltip,
-  Legend,
-} from "chart.js";
-import { Chart } from "chart.js/auto";
-import { Scatter } from "react-chartjs-2";
 
-ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend);
-
-export const options = {
-  scales: {
-    y: {
-      beginAtZero: true,
-    },
-  },
-};
-
-export const data = {
-  datasets: [
-    {
-      label: "A dataset",
-      data: Array.from({ length: 100 }, () => ({
-        x: faker.datatype.number({ min: -100, max: 100 }),
-        y: faker.datatype.number({ min: -100, max: 100 }),
-      })),
-      backgroundColor: "rgba(255, 99, 132, 1)",
-    },
-  ],
-};
-
-export function AverageMass() {
+export default function AverageMass() {
   const [meteorData, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -52,11 +19,34 @@ export function AverageMass() {
 
       setLoading(false);
       setData(data);
+      console.log(meteorData[0]); //Showing all data for that meteor
+      console.log(meteorData[0].mass); //Undefined
       return data; //Array of like 45,000 objects
     } catch (err) {
       console.log(err);
     }
   };
 
-  return <Scatter options={options} data={data} />;
+  let totalMass = 0;
+  let totalCount = 0;
+
+  meteorData.forEach((meteor) => {
+    const massValue = meteor.mass;
+    // console.log(massValue); //Undefined
+    const mass = massValue ? parseFloat(massValue.split(",").join("")) : 0;
+
+    totalMass += mass;
+    totalCount++;
+  });
+
+  const overallAvgMass = (totalMass / totalCount).toFixed(2);
+
+  return (
+    <div>
+      <span>
+        <h3>Total Average Mass: </h3>
+      </span>
+      {overallAvgMass}
+    </div>
+  );
 }
