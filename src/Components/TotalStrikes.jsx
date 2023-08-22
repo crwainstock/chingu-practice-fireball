@@ -33,7 +33,7 @@ export default function TotalStrikes() {
       <span>
         <h3 className="title">Total Number of Strikes: </h3>
         <div className="data-text">
-          <h4>{strikesCount} meteorite strikes</h4>
+          <h4>{strikesCount}</h4>
         </div>
       </span>
     </div>
