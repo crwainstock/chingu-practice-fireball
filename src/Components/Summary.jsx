@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import StrikesByYear from "./StrikesByYear";
 import AverageMass from "./AverageMass";
+import TotalStrikes from "./TotalStrikes";
 
 // import * as d3Fetch from "d3-fetch";
 // import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
@@ -24,6 +25,7 @@ function Summary() {
         <div>
           <StrikesByYear />
           <AverageMass />
+          <TotalStrikes />
         </div>
       )}
     </div>
