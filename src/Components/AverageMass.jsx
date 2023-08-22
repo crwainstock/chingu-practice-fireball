@@ -40,11 +40,18 @@ export default function AverageMass() {
   });
 
   const overallAvgMass = (totalMass / totalCount).toFixed(2);
+  const imperialTons = (overallAvgMass / 10160).toFixed(2);
+  const usTons = (overallAvgMass / 9072).toFixed(2);
+  const kilograms = (overallAvgMass / 10).toFixed(2);
 
   return (
     <div>
       <span>
-        <h3>Total Average Mass: </h3> <h4>{overallAvgMass} grams</h4>
+        <h3>Total Average Mass: </h3>
+        <h4>{overallAvgMass} grams</h4>
+        <h4>{kilograms} kilograms</h4>
+        <h4>{imperialTons} Imperial Tons</h4>
+        <h4>{usTons} US Tons</h4>
       </span>
     </div>
   );
