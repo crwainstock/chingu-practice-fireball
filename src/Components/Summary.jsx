@@ -24,8 +24,8 @@ function Summary() {
       ) : (
         <div>
           <StrikesByYear />
-          <AverageMass />
           <TotalStrikes />
+          <AverageMass />
         </div>
       )}
     </div>
