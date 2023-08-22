@@ -19,8 +19,8 @@ export default function AverageMass() {
 
       setLoading(false);
       setData(data);
-      console.log(meteorData[0]); //Showing all data for that meteor
-      console.log(meteorData[0].mass); //Undefined
+      // console.log(meteorData[0]); //Showing all data for that meteor
+      // console.log(meteorData[0]["mass (g)"]);
       return data; //Array of like 45,000 objects
     } catch (err) {
       console.log(err);
@@ -31,7 +31,7 @@ export default function AverageMass() {
   let totalCount = 0;
 
   meteorData.forEach((meteor) => {
-    const massValue = meteor.mass;
+    const massValue = meteor["mass (g)"];
     // console.log(massValue); //Undefined
     const mass = massValue ? parseFloat(massValue.split(",").join("")) : 0;
 
@@ -44,9 +44,8 @@ export default function AverageMass() {
   return (
     <div>
       <span>
-        <h3>Total Average Mass: </h3>
+        <h3>Total Average Mass: </h3> <h4>{overallAvgMass} grams</h4>
       </span>
-      {overallAvgMass}
     </div>
   );
 }
