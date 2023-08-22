@@ -34,17 +34,19 @@ function StrikesByComposition() {
   const strikesByRecclass = {};
 
   meteorData.forEach((meteor) => {
-    const compostion = meteor.recclass;
+    const composition = meteor.recclass;
 
-    if (compostion !== undefined) {
-      if (!strikesByRecclass[compostion]) {
-        strikesByRecclass[compostion] = 0;
+    if (composition !== "Unknown") {
+      if (composition !== undefined) {
+        if (!strikesByRecclass[composition]) {
+          strikesByRecclass[composition] = 0;
+        }
+        strikesByRecclass[composition]++;
       }
-      strikesByRecclass[compostion]++;
     }
   });
 
-  const compositions = Object.keys(strikesByRecclass);
+  const compositions = Object.keys(strikesByRecclass).slice(0, 10);
   const strikesCount = compositions.map(
     (composition) => strikesByRecclass[composition]
   );
@@ -54,13 +56,14 @@ function StrikesByComposition() {
   }
 
   strikesCount.sort(compareNumbers);
+  const topTenCompositions = strikesCount.slice(0, 10);
 
   const chartData = {
     labels: compositions,
     datasets: [
       {
         label: "Number of Strikes by Meteorite Composition",
-        data: strikesCount,
+        data: topTenCompositions,
         borderColor: "rgb(75, 192, 192)",
         fill: false,
       },
