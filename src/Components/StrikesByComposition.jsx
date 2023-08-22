@@ -62,7 +62,7 @@ function StrikesByComposition() {
     labels: compositions,
     datasets: [
       {
-        label: "Number of Strikes by Meteorite Composition",
+        label: "Number of Strikes",
         data: topTenCompositions,
         fill: false,
         backgroundColor: "rgb(12, 22, 79)",
@@ -93,6 +93,9 @@ function StrikesByComposition() {
       },
     },
     plugins: {
+      tooltip: {
+        displayColors: false,
+      },
       legend: {
         display: false,
       },
