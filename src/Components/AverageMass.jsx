@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import * as d3Fetch from "d3-fetch";
+import "./mass.css";
 
 export default function AverageMass() {
   const [meteorData, setData] = useState([]);
@@ -45,13 +46,15 @@ export default function AverageMass() {
   const kilograms = (overallAvgMass / 10).toFixed(2);
 
   return (
-    <div>
+    <div className="mass-container">
       <span>
-        <h3>Total Average Mass: </h3>
-        <h4>{overallAvgMass} grams</h4>
-        <h4>{kilograms} kilograms</h4>
-        <h4>{imperialTons} Imperial Tons</h4>
-        <h4>{usTons} US Tons</h4>
+        <h3 className="title">Total Average Mass of Meteorites: </h3>
+        <div className="data-text">
+          <h4>{overallAvgMass} grams</h4>
+          <h4>{kilograms} kilograms</h4>
+          <h4>{imperialTons} Imperial Tons</h4>
+          <h4>{usTons} US Tons</h4>
+        </div>
       </span>
     </div>
   );

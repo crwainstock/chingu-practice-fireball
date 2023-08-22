@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import StrikesByYear from "./StrikesByYear";
 import AverageMass from "./AverageMass";
+
 // import * as d3Fetch from "d3-fetch";
 // import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 // import { Doughnut } from "react-chartjs-2";
@@ -79,7 +80,7 @@ function Summary() {
         </div>
       ) : (
         <div>
-          {/* <StrikesByYear /> */}
+          <StrikesByYear />
           <AverageMass />
           {/* <Doughnut
             //   options={...}
