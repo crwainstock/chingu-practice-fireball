@@ -15,12 +15,12 @@ export default function TotalStrikes() {
     setLoading(true);
     try {
       let data = await d3Fetch.csv(
-        "https://gist.githubusercontent.com/uKiJo/8655699e6f0a64c84d25ad652a9ca072/raw/8ed19eadc38db9a5606d3831c1c717d6b5358920/meteorite-landing.csv"
+        "https://gist.githubusercontent.com/crwainstock/59650ea0c7d88b4a9a0531aa52c56353/raw/b1905fb1fee896b776d520ebf7db020cf6634691/meteorData.csv"
       );
 
       setLoading(false);
       setData(data);
-      return data; //Array of like 45,000 objects
+      return data;
     } catch (err) {
       console.log(err);
     }
