@@ -1,9 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import * as d3Fetch from "d3-fetch";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { Chart } from "chart.js/auto";
+// import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+// import { Chart } from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
+import "./summary.css";
 // import { useMeteorDataContext } from "../MeteorContext"; //This wasn't working, but I'll use it eventually.
 
 //Thanks Alex for your work putting much of this together! Your work is much appreciated! :)
@@ -144,9 +145,9 @@ function StrikesByYear() {
       style={{
         width: 700,
         color: "white",
-        marginTop: 50,
+        marginTop: "0.5rem",
         background: "rgb(229,231,245)",
-        margin: "1rem",
+        margin: "0.5rem",
         // border: "5px solid white",
         borderRadius: "8px",
       }}

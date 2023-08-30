@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import * as d3Fetch from "d3-fetch";
-import "./mass.css";
+import "./summary.css";
 
 export default function AverageMass() {
   const [meteorData, setData] = useState([]);

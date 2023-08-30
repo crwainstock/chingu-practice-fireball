@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import * as d3Fetch from "d3-fetch";
-import "./mass.css";
+import "./summary.css";
 
 export default function TotalStrikes() {
   const [meteorData, setData] = useState([]);
@@ -29,7 +29,7 @@ export default function TotalStrikes() {
   const strikesCount = meteorData.length;
 
   return (
-    <div className="mass-container">
+    <div className="strikes-container">
       <span>
         <h3 className="title">Total Number of Strikes: </h3>
         <div className="data-text">

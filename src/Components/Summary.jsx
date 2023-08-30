@@ -22,10 +22,10 @@ function Summary() {
           <span className="visually-hidden">Loading...</span>
         </div>
       ) : (
-        <div>
+        <div className="summary-container">
           <StrikesByYear />
-          <StrikesByComposition />
           <TotalStrikes />
+          <StrikesByComposition />
           <AverageMass />
         </div>
       )}

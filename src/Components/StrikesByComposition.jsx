@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import { Chart } from "chart.js/auto";
 import * as d3Fetch from "d3-fetch";
-import "./byComposition.css";
+import "./summary.css";
 // import { useMeteorDataContext } from "../store/meteor-context";
 
 function StrikesByComposition() {
@@ -117,13 +117,13 @@ function StrikesByComposition() {
         color: "white",
         marginTop: 50,
         background: "rgb(229,231,245)",
-        margin: "1rem",
+        margin: "0.5rem",
         // border: "5px solid white",
         borderRadius: "8px",
       }}
     >
       <Line data={chartData} options={chartOptions} />
-      <div className="learn-more-container">
+      {/* <div className="learn-more-container">
         <h4 className="title">Learn more about each meteorite type below</h4>
         <div className="types-of-meteorites-grid">
           <div className="grid-item">
@@ -161,7 +161,7 @@ function StrikesByComposition() {
             <a href="https://www.mindat.org/min-49710.html">H4 Meteorites</a>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
