@@ -23,10 +23,10 @@ function Summary() {
         </div>
       ) : (
         <div className="summary-container">
-          <StrikesByYear />
           <TotalStrikes />
-          <StrikesByComposition />
+          <StrikesByYear />
           <AverageMass />
+          <StrikesByComposition />
         </div>
       )}
     </div>

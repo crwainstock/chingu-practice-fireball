@@ -147,8 +147,8 @@ function StrikesByYear() {
         color: "white",
         marginTop: "0.5rem",
         background: "rgb(229,231,245)",
-        margin: "0.5rem",
-        // border: "5px solid white",
+        margin: "0 auto",
+        display: "block",
         borderRadius: "8px",
       }}
     >
