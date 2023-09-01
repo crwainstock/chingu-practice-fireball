@@ -1,11 +1,11 @@
-.summary-container {
+/* .summary-container {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 2fr 1fr;
   justify-content: center;
   gap: 1rem;
   max-width: 85%;
-}
+} */
 
 .strikes-container {
   background-color: rgb(229, 231, 245);
