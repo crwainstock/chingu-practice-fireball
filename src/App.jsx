@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Summary from "./Components/Summary";
+import Summary from "./Components/Summary/Summary";
 import "./App.css";
 
 function App() {

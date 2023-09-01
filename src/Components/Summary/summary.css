@@ -4,6 +4,7 @@
   grid-template-rows: 2fr 1fr;
   justify-content: center;
   gap: 1rem;
+  max-width: 85%;
 }
 
 .strikes-container {

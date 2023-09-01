@@ -4,6 +4,7 @@ import StrikesByYear from "./StrikesByYear";
 import AverageMass from "./AverageMass";
 import TotalStrikes from "./TotalStrikes";
 import StrikesByComposition from "./StrikesByComposition";
+import StrikesByCountry from "../Location/StrikesByCountry";
 // import * as d3Fetch from "d3-fetch";
 // import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 // import { Doughnut } from "react-chartjs-2";
@@ -22,11 +23,12 @@ function Summary() {
           <span className="visually-hidden">Loading...</span>
         </div>
       ) : (
-        <div className="summary-container">
+        <div>
           <TotalStrikes />
           <StrikesByYear />
           <AverageMass />
           <StrikesByComposition />
+          <StrikesByCountry />
         </div>
       )}
     </div>
