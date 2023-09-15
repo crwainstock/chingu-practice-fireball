@@ -27,7 +27,7 @@ function Summary() {
         <div>
           <TotalStrikes />
           <StrikesByYear />
-          <StrikesByYearFiltered />
+          {/* <StrikesByYearFiltered /> */}
           <AverageMass />
           <StrikesByComposition />
           <StrikesByCountry />

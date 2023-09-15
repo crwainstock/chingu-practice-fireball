@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { csv } from "d3-fetch";
 
-const url =
-  "https://gist.githubusercontent.com/crwainstock/59650ea0c7d88b4a9a0531aa52c56353/raw/b1905fb1fee896b776d520ebf7db020cf6634691/meteorData.csv";
+// const url =
+//   "https://gist.githubusercontent.com/uKiJo/8655699e6f0a64c84d25ad652a9ca072/raw/8ed19eadc38db9a5606d3831c1c717d6b5358920/meteorite-landing.csv";
 
-const useGetMeteoriteData = (
-  url = "https://gist.githubusercontent.com/crwainstock/59650ea0c7d88b4a9a0531aa52c56353/raw/b1905fb1fee896b776d520ebf7db020cf6634691/meteorData.csv"
+const useGetLandingData = (
+  url = "https://gist.githubusercontent.com/uKiJo/8655699e6f0a64c84d25ad652a9ca072/raw/8ed19eadc38db9a5606d3831c1c717d6b5358920/meteorite-landing.csv"
 ) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -30,4 +30,4 @@ const useGetMeteoriteData = (
   return { data, loading, error };
 };
 
-export default useGetMeteoriteData;
+export default useGetLandingData;

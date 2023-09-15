@@ -6,11 +6,12 @@ import { Bar } from "react-chartjs-2";
 import Stack from "@mui/material/Stack";
 import Slider from "@mui/material/Slider";
 import Typography from "@mui/material/Typography";
-import { useMeteoriteContext } from "../../Hooks/useMeteoriteContext";
+import { useDataContext } from "../../Hooks/useDataContext";
 import "../summary/summary.css";
 
 function StrikesByYearFiltered() {
-  const meteorData = useMeteoriteContext();
+  const meteorData = useDataContext().data;
+  console.log(meteorData);
   const [sliderValue, setSliderValue] = useState([0, 10000]);
   const [strikesCount, setStrikesCount] = useState([]);
   const [years, setYears] = useState([]);
