@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import { csv } from "d3-fetch";
 
-// const url =
-//   "https://gist.githubusercontent.com/uKiJo/8655699e6f0a64c84d25ad652a9ca072/raw/8ed19eadc38db9a5606d3831c1c717d6b5358920/meteorite-landing.csv";
-
 const useGetLandingData = (
   url = "https://gist.githubusercontent.com/uKiJo/8655699e6f0a64c84d25ad652a9ca072/raw/8ed19eadc38db9a5606d3831c1c717d6b5358920/meteorite-landing.csv"
 ) => {
@@ -15,7 +12,6 @@ const useGetLandingData = (
     async function fetchData() {
       try {
         const fetchedData = await csv(url);
-
         setData(fetchedData);
         setLoading(false);
       } catch (error) {
@@ -24,7 +20,7 @@ const useGetLandingData = (
       }
     }
 
-    fetchData();
+    fetchData(); // Trigger data fetching when the component mounts
   }, []);
 
   return { data, loading, error };
